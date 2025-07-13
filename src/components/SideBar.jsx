@@ -1,5 +1,3 @@
-
-
 export default function SideBar(props) {
     return (
         <div className="sidebar">
