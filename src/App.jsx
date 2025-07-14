@@ -42,7 +42,7 @@ export default function App() {
   return (
     <>
       {apodData ? <Main apodData={apodData} /> : (
-        <div className="loadingState">
+        <div className="loading-state">
             <i className="fa-solid fa-gear"></i>
             <span>Loading</span>
         </div>

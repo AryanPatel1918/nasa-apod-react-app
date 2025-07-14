@@ -19,7 +19,6 @@
 
 .image-container {
   display: flex;
-  flex-direction: column;
   height: 100vh;
   width: 100%;
 }
@@ -82,10 +81,21 @@ footer > button:hover {
 
 .sidebar {
   position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: flex-end; /* aligns sidebar contents to right */
+  top: 0;
+  right: 0;
+  height: 100vh;
   z-index: 10;
+  transform: translateX(100%);
+  animation: slide-in 300ms forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .bg-overlay {
@@ -143,6 +153,33 @@ footer > button:hover {
 .description-title {
   font-size: 1.1rem;
   font-weight: 200;
+}
+
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  gap: 0.5rem;
+  opacity: 0.7;
+}
+
+.loading-state > i {
+  font-size: 1.7rem;
+  animation: spin 2s linear infinite;
+}
+
+.loading-state > span {
+  font-size: 1.5rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg)
+  } 
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (min-width: 640px) {
