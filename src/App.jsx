@@ -35,6 +35,13 @@ export default function App() {
     fetchApodData() // call async function
   }, [])
 
+  // console.log apodData for testing
+  // useEffect(() => {
+  //   if (apodData) {
+  //     console.log("apodData updated:", apodData)
+  //   }
+  // }, [apodData])
+
   function toggleModal() {
     setShowModal(prev => !prev)
   }
