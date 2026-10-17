@@ -9,8 +9,8 @@ export default function App() {
   
   useEffect(() => {
     async function fetchApodData() {
-      const url = "https://api.nasa.gov/planetary/apod?api_key="
-      const NASA_API_KEY = import.meta.env.VITE_NASA_API_KEY
+      const url = "https://science.nasa.gov/wp-json/wp/v2/apod-basic"
+      // const NASA_API_KEY = import.meta.env.VITE_NASA_API_KEY
       
       const today = new Date().toDateString()
       const localKey = `NASA-${today}`
@@ -23,10 +23,10 @@ export default function App() {
       localStorage.clear() // remove older key
 
       try {
-        const response = await fetch(url + NASA_API_KEY)
+        const response = await fetch(url)
         const data = await response.json()
-        localStorage.setItem(localKey, JSON.stringify(data))
-        setApodData(data)
+        localStorage.setItem(localKey, JSON.stringify(data[0]))
+        setApodData(data[0])
         console.log("Fetched from API")
       } catch (error) {
         console.log(error.message)
