@@ -85,7 +85,6 @@ footer > button:hover {
   right: 0;
   height: 100vh;
   z-index: 10;
-  transform: translateX(100%);
   animation: slide-in 300ms forwards;
 }
 
