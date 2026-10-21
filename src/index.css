@@ -50,6 +50,11 @@ footer h2 {
   font-size: 1.6rem;
 }
 
+footer h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
 footer h1 {
   font-size: 1.2rem;
   font-weight: 100;
